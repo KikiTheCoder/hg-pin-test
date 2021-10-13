@@ -28,7 +28,7 @@ app.get("/pin/:pin/:state", (req, res) => {
     res.send(`Switched ${req.params.pin}`)
 })
 
-const switchIn = new Gpio( '17', 'in', 'both' );
+const switchIn = new Gpio( '16', 'in', 'both' );
 
 switchIn.watch( ( err, value ) => {
   if( err ) {
