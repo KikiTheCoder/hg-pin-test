@@ -21,6 +21,42 @@ switchIn.watch( ( err, value ) => {
 
 } );
 
+const switchIn = new Gpio( '1', 'in', 'both' );
+
+switchIn.watch( ( err, value ) => {
+  if( err ) {
+    console.log( 'Error', err );
+  }
+
+  // log pin value (0 or 1)
+  console.log( 'Pin value', value ,"pin 1" );
+
+} );
+
+const switchIn = new Gpio( '7', 'in', 'both' );
+
+switchIn.watch( ( err, value ) => {
+  if( err ) {
+    console.log( 'Error', err );
+  }
+
+  // log pin value (0 or 1)
+  console.log( 'Pin value', value ,"pin 7" );
+
+} );
+
+
+const switchIn = new Gpio( '8', 'in', 'both' );
+
+switchIn.watch( ( err, value ) => {
+  if( err ) {
+    console.log( 'Error', err );
+  }
+
+  // log pin value (0 or 1)
+  console.log( 'Pin value', value ,"pin 8" );
+
+} );
 
 
 app.listen(port, () => {
