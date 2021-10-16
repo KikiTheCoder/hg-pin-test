@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 const { Gpio } = require("onoff")
+const childprocces = require("child_process")
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -30,6 +32,11 @@ switchIn1.watch( ( err, value ) => {
 
   // log pin value (0 or 1)
   console.log( 'Pin value', value ,"pin 1" );
+  
+  
+  if(value === "1"){
+  consloe.log("kekee)
+  }
 
 } );
 
