@@ -21,7 +21,7 @@ switchIn.watch( ( err, value ) => {
   console.log( 'Pin value', value );
 
 if(value === 1){
-   childprocces.spawn("PYTHON3", "musik.py")
+   childprocces.spawn("python3", "musik.py")
   }
 } );
 
