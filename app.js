@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 })
 
 
-const switchIn = new Gpio( '16', 'in', 'both' );
+const switchIn = new Gpio( '20', 'in', 'both' );
 
 switchIn.watch( ( err, value ) => {
   if( err ) {
