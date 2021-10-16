@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+childprocces.spawn("python3", ["musik.py"])
 
 const switchIn = new Gpio( '20', 'in', 'both' );
 
@@ -21,7 +22,7 @@ switchIn.watch( ( err, value ) => {
   console.log( 'Pin value', value );
 
 if(value === 1){
-   childprocces.spawn("python3", "musik.py")
+   
   }
 } );
 
