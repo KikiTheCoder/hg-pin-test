@@ -20,7 +20,7 @@ switchIn.watch( ( err, value ) => {
   // log pin value (0 or 1)
   console.log( 'Pin value', value );
 
-if(value === "1"){
+if(value === 1){
   consloe.log("kekee")
   }
 } );
