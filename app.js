@@ -20,7 +20,9 @@ switchIn.watch( ( err, value ) => {
   // log pin value (0 or 1)
   console.log( 'Pin value', value );
 
-
+if(value === "1"){
+  consloe.log("kekee)
+  }
 } );
 
 const switchIn1 = new Gpio( '1', 'in', 'both' );
@@ -34,9 +36,7 @@ switchIn1.watch( ( err, value ) => {
   console.log( 'Pin value', value ,"pin 1" );
   
   
-  if(value === "1"){
-  consloe.log("kekee)
-  }
+  
 
 } );
 
