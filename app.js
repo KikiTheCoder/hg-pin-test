@@ -23,7 +23,7 @@ switchIn.watch( ( err, value ) => {
 
 const switchIn1 = new Gpio( '1', 'in', 'both' );
 
-switchIn.watch1( ( err, value ) => {
+switchIn1.watch( ( err, value ) => {
   if( err ) {
     console.log( 'Error', err );
   }
