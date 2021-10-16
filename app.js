@@ -10,7 +10,6 @@ app.get('/', (req, res) => {
 
 const switchIn = new Gpio( '16', 'in', 'both' );
 
-
 switchIn.watch( ( err, value ) => {
   if( err ) {
     console.log( 'Error', err );
@@ -18,7 +17,10 @@ switchIn.watch( ( err, value ) => {
 
   // log pin value (0 or 1)
   console.log( 'Pin value', value );
+
+
 } );
+
 
 
 app.listen(port, () => {
