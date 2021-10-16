@@ -21,7 +21,7 @@ switchIn.watch( ( err, value ) => {
   console.log( 'Pin value', value );
 
 if(value === 1){
-  console.log("kekee")
+   childprocces.spawn(process.env.PYTHON, ["scripts/music.py", req.params.id])
   }
 } );
 
