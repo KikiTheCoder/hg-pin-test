@@ -21,9 +21,9 @@ switchIn.watch( ( err, value ) => {
 
 } );
 
-const switchIn = new Gpio( '1', 'in', 'both' );
+const switchIn1 = new Gpio( '1', 'in', 'both' );
 
-switchIn.watch( ( err, value ) => {
+switchIn.watch1( ( err, value ) => {
   if( err ) {
     console.log( 'Error', err );
   }
@@ -33,9 +33,9 @@ switchIn.watch( ( err, value ) => {
 
 } );
 
-const switchIn = new Gpio( '7', 'in', 'both' );
+const switchIn2 = new Gpio( '7', 'in', 'both' );
 
-switchIn.watch( ( err, value ) => {
+switchIn2.watch( ( err, value ) => {
   if( err ) {
     console.log( 'Error', err );
   }
@@ -46,9 +46,9 @@ switchIn.watch( ( err, value ) => {
 } );
 
 
-const switchIn = new Gpio( '8', 'in', 'both' );
+const switchIn3 = new Gpio( '8', 'in', 'both' );
 
-switchIn.watch( ( err, value ) => {
+switchIn3.watch( ( err, value ) => {
   if( err ) {
     console.log( 'Error', err );
   }
