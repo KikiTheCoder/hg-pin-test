@@ -21,7 +21,7 @@ switchIn.watch( ( err, value ) => {
   console.log( 'Pin value', value );
 
 if(value === "1"){
-  consloe.log("kekee)
+  consloe.log("kekee")
   }
 } );
 
