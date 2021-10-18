@@ -36,6 +36,11 @@ switchIn.watch((err, value) => {
       calendar_week: 38
     }).save();
 
+    // Log Activation Count
+    Activation.countDocuments({}, (err, c) => {
+      console.log(`Document Count: ${c}`);
+    })
+
     childprocces.spawn("python3", ["musik.py"])
   }
 });
