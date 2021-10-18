@@ -28,7 +28,7 @@ switchIn.watch((err, value) => {
   console.log('Pin value', value);
 
   if (value === 1) {
-    new Activation({
+ /*   new Activation({
       id: 2,
       time: new Date(),
       event: 2,
@@ -40,7 +40,7 @@ switchIn.watch((err, value) => {
     Activation.countDocuments({}, (err, c) => {
       console.log(`Document Count: ${c}`);
     })
-
+*/
     childprocces.spawn("python3", ["musik.py"])
   }
 });
