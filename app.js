@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const { Gpio } = require("onoff")
+//const { Gpio } = require("onoff")
 const childprocces = require("child_process")
 const mongoose = require("mongoose")
 const Activation = require("./ActivationScheme")
-
+const dev = (process.env.NODE_ENV == "production") ? false : true
 mongoose.connect("mongodb+srv://halloweenuser:XnaDFjqObtJGdRf6@halloweengarten.iu0kr.mongodb.net/halloween-data?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }).then(
   console.log("[DB] Ready")
 )
@@ -15,7 +15,24 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/triggerdb', (req, res) => {
+  newDatabaseEntry(0, 0)
 
+  res.send("Jop")
+})
+
+const newDatabaseEntry = (event, program) => {
+  Activation.countDocuments({}, (err, c) => {
+
+    new Activation({
+      id: c + 1,
+      time: new Date(),
+      event,
+      program,
+      dev: dev
+    }).save();
+  })
+}
 
 const switchIn = new Gpio('20', 'in', 'both');
 
@@ -28,19 +45,8 @@ switchIn.watch((err, value) => {
   console.log('Pin value', value);
 
   if (value === 1) {
- /*   new Activation({
-      id: 2,
-      time: new Date(),
-      event: 2,
-      dev: true,
-      calendar_week: 38
-    }).save();
+    newDatabaseEntry(0, 0);
 
-    // Log Activation Count
-    Activation.countDocuments({}, (err, c) => {
-      console.log(`Document Count: ${c}`);
-    })
-*/
     childprocces.spawn("python3", ["musik.py"])
   }
 });

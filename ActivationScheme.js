@@ -22,20 +22,9 @@ const Activation = new Schema ({
         type: Date,
         required: true
     },
-    event: {
-        type: Number,
-        required: false
-    },
-    program: {
-        type: Number,
-        required: false
-    },
-    dev: req_bool,
-    calendar_week: req_num,
-    Counter: {
-        type: Number,
-        required: true
-    }
+    event: req_num,
+    program: req_num,
+    dev: req_bool
 })
 
 module.exports = mongoose.model("Activation", Activation)
